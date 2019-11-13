@@ -29,4 +29,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
     implementation 'com.google.android.material:material:1.0.0'
+
+    //Database implementation
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    //api use
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+
 }

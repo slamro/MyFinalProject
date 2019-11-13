@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,18 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nasa Imagery"
+        android:textAlignment="center"
+        android:textColor="#673AB7"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home" />
+        android:src="@mipmap/ic_home_page_foreground" />
+
 
 </FrameLayout>
