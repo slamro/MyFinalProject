@@ -16,7 +16,7 @@ public abstract class AppDatabase extends RoomDatabase{
                 .build();
         return instance;
     }
-    public abstract ImagesDAO imagesDAO();
-    public abstract PurchasesDAO purchasesDAO();
+    public abstract ImagesDao imagesDAO();
+    public abstract PurchasesDao purchasesDAO();
 }
 
