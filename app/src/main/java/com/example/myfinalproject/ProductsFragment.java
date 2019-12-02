@@ -1,6 +1,7 @@
 package com.example.myfinalproject;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -19,6 +27,7 @@ public class ProductsFragment extends Fragment {
     View root;
     private ImageView imageView;
     private TextView title, description, nasaID;
+
 
 
     public ProductsFragment() {
@@ -35,5 +44,34 @@ public class ProductsFragment extends Fragment {
 
         return root;
     }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//
+//        Context context = getContext();
+//        RecyclerViewAdapter = new CourseRecyclerViewAdapter(new ArrayList<Course>());
+//
+//        if (columnCount <=1 ){
+//            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//        }
+//        else{
+//            recyclerView.setLayoutManager(new GridLayoutManager(context, columnCount));
+//        }
+//        recyclerView.setAdapter(courseRecyclerViewAdapter);
+//        recyclerView.setHasFixedSize(false);
+//
+//        ViewModelProviders.of(this)
+//                .get(AllCoursesViewModel.class)
+//                .getCourseList(context)
+//                .observe(this, new Observer<List<Course>>() {
+//                    @Override
+//                    public void onChanged(List<Course> courses) {
+//                        if (courses !=null){
+//                            courseRecyclerViewAdapter.addItems(courses);
+//                        }
+//                    }
+//                });
+//    }
 
 }

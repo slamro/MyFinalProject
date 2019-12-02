@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new HomeFragment();
                             break;
                         case R.id.menu_products:
+
                             selectedFragment = new ProductsFragment();
                             break;
                         case R.id.menu_my_cart:

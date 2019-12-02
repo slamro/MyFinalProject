@@ -28,5 +28,8 @@ public interface ImagesDao {
     @Query("select * from Images where pkid =:pid")
     Images getbyID(String pid);
 
+    @Update
+    void update(Images image);
+
 
 }
