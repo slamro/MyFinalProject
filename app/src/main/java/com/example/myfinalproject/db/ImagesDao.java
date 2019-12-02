@@ -26,7 +26,7 @@ public interface ImagesDao {
     void insertCourses(Images...images);
 
     @Query("select * from Images where pkid =:pid")
-    Images getbyID(int pid);
+    Images getbyID(String pid);
 
 
 }
