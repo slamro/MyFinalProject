@@ -12,20 +12,20 @@ public class Images {
 
 
     public Images(){}
-    public Images(String id, String title, String desc, String uri, int cart, int purchased){
-        this.pkid = id;
+    public Images(String nasa_id, String title, String description, String href, int cart, int purchased){
+        this.pkid = nasa_id;
         this.title = title;
-        this.desc = desc;
-        URI = uri;
+        this.desc = description;
+        this.Url = href;
         this.cart = cart;
         this.purchased = purchased;
     }
 
     private String title;
     private String desc;
-    private String URI;
-    private int cart;
-    private int purchased;
+    private String Url;
+    private int cart = 0;
+    private int purchased = 0;
 
     public String getPkid(){return pkid;}
     public void setPkid(String id){pkid = id;}
@@ -33,11 +33,12 @@ public class Images {
     public void setTitle(String title){this.title = title;}
     public String getDesc(){return desc;}
     public void setDesc(String desc){this.desc = desc;}
-    public String getURI(){return URI;}
-    public void setURI(String uri){URI = uri;}
+    public String getUrl(){return Url;}
+    public void setUrl(String url){this.Url = url;}
     public int getCart(){return cart;}
     public void setCart(int cart){this.cart = cart;}
     public int getPurchased(){return purchased;}
     public void setPurchased(int purchased){this.purchased = purchased;}
+
 
 }

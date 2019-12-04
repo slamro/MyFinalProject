@@ -27,7 +27,7 @@ public class MainActivityFragment extends Fragment {
     private View root;
     private RecyclerView recyclerView;
     private RecyclerViewAdapter rva;
-    private int columnCount =1;
+    private int columnCount =3;
 
     public MainActivityFragment() {
     }
@@ -59,13 +59,13 @@ public class MainActivityFragment extends Fragment {
         recyclerView.setHasFixedSize(false);
 
         ViewModelProviders.of(this)
-                .get(AllCoursesViewModel.class)
-                .getCourseList(context)
-                .observe(this, new Observer<List<Course>>() {
+                .get(AllImagesViewModel.class)
+                .getImageList(context)
+                .observe(this, new Observer<List<Images>>() {
                     @Override
-                    public void onChanged(List<Course> courses) {
-                        if (courses !=null){
-                            rva.addItems(courses);
+                    public void onChanged(List<Images> images) {
+                        if (images !=null){
+                            rva.addItems(images);
                         }
                     }
                 });

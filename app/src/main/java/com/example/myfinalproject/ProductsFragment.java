@@ -14,6 +14,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myfinalproject.db.Images;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +28,8 @@ import java.util.List;
 public class ProductsFragment extends Fragment {
 
     View root;
-    private ImageView imageView;
-    private TextView title, description, nasaID;
+
+
 
 
 
@@ -45,33 +48,7 @@ public class ProductsFragment extends Fragment {
         return root;
     }
 
-//    @Override
-//    public void onResume() {
-//        super.onResume();
 //
-//        Context context = getContext();
-//        RecyclerViewAdapter = new CourseRecyclerViewAdapter(new ArrayList<Course>());
-//
-//        if (columnCount <=1 ){
-//            recyclerView.setLayoutManager(new LinearLayoutManager(context));
-//        }
-//        else{
-//            recyclerView.setLayoutManager(new GridLayoutManager(context, columnCount));
-//        }
-//        recyclerView.setAdapter(courseRecyclerViewAdapter);
-//        recyclerView.setHasFixedSize(false);
-//
-//        ViewModelProviders.of(this)
-//                .get(AllCoursesViewModel.class)
-//                .getCourseList(context)
-//                .observe(this, new Observer<List<Course>>() {
-//                    @Override
-//                    public void onChanged(List<Course> courses) {
-//                        if (courses !=null){
-//                            courseRecyclerViewAdapter.addItems(courses);
-//                        }
-//                    }
-//                });
-//    }
+
 
 }

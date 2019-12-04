@@ -65,7 +65,7 @@ public class ProductDetails extends DialogFragment {
                     image = AppDatabase.getInstance(getContext())
                             .imagesDAO()
                             .getbyID(imgID);
-                    imgURL = image.getURI();
+                    imgURL = image.getUrl();
                     imgTitle.setText(image.getTitle());
                     imgDetails.setText(image.getDesc());
                     URL newURL = null;

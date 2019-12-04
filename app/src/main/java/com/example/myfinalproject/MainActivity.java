@@ -5,12 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.myfinalproject.db.AppDatabase;
+import com.example.myfinalproject.db.Images;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private GetNasaImages Nasa;
+    private RecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,30 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainer, new HomeFragment())
                 .commit();
+
+        Nasa = new GetNasaImages();
+        Log.d("GetNasaImages","Done " + Nasa);
+        Nasa.setOnImageListComplete(new GetNasaImages.OnImageListComplete() {
+            @Override
+            public void processImageList(Images[] images) {
+                final ArrayList<Images> imageList = new ArrayList<>();
+                for (Images image:images){
+                    Log.d("ItemList", "Item: " + imageList);
+                    imageList.add(image);
+                }
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        AppDatabase.getInstance(getApplicationContext())
+                                .imagesDAO()
+                                .insert(imageList);
+                    }
+                }).start();
+            }
+        });
+
+        Nasa.execute("");
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

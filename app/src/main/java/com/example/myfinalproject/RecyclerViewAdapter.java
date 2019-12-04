@@ -27,7 +27,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private final List<Images> images;
 
-    protected ItemListener mListener;
 
     public RecyclerViewAdapter(List<Images> nasa){images = nasa;}
 
@@ -57,10 +56,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             root = itemView;
 
-//            root.setOnClickListener(this);
+
             textView = root.findViewById(R.id.textView);
             imageView = root.findViewById(R.id.imageView);
-            relativeLayout = root.findViewById(R.id.relativeLayout);
+//            relativeLayout = root.findViewById(R.id.relativeLayout);
 
         }
 
@@ -81,6 +80,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.nasa = image;
 //            holder.imageView.setImageURI(image.getURI());
             holder.textView.setText(image.getTitle());
+            Log.d("Title", "Nasa ID " + image.getTitle());
 
             holder.root.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -113,7 +113,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return images.size();
     }
 
-    public interface ItemListener {
-        void onItemClick(DataModel item);
-    }
 }
